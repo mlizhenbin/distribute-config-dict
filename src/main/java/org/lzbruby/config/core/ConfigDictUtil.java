@@ -2,7 +2,7 @@ package org.lzbruby.config.core;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
-import org.lzbruby.config.domain.ConfigDict;
+import org.lzbruby.config.dao.model.ConfigDict;
 import org.lzbruby.config.domain.ConfigDictValidFlagType;
 
 import java.util.List;

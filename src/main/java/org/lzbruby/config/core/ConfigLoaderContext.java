@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
-import org.lzbruby.config.domain.ConfigDict;
+import org.lzbruby.config.dao.model.ConfigDict;
 import org.lzbruby.config.domain.ConfigDictValidFlagType;
 import org.lzbruby.config.service.ConfigDictService;
 import org.slf4j.Logger;

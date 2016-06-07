@@ -3,7 +3,7 @@ package org.lzbruby.config.common;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang.StringUtils;
 import org.lzbruby.config.core.ConfigDictUtil;
-import org.lzbruby.config.domain.ConfigDict;
+import org.lzbruby.config.dao.model.ConfigDict;
 import org.lzbruby.config.domain.ConfigDictType;
 
 import java.util.List;

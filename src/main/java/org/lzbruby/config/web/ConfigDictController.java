@@ -6,7 +6,7 @@ import org.lzbruby.config.common.page.Paging;
 import org.lzbruby.config.common.page.PagingRequest;
 import org.lzbruby.config.common.utils.JacksonUtil;
 import org.lzbruby.config.core.ConfigDictVersionRegister;
-import org.lzbruby.config.domain.ConfigDict;
+import org.lzbruby.config.dao.model.ConfigDict;
 import org.lzbruby.config.domain.ConfigDictVO;
 import org.lzbruby.config.domain.ConfigDictValidFlagType;
 import org.lzbruby.config.service.ConfigDictService;

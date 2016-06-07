@@ -1,6 +1,6 @@
 package org.lzbruby.config.dao;
 
-import org.lzbruby.config.domain.ConfigDict;
+import org.lzbruby.config.dao.model.ConfigDict;
 
 import java.util.List;
 import java.util.Map;

@@ -2,7 +2,7 @@ package org.lzbruby.config.service;
 
 import org.lzbruby.config.common.page.Paging;
 import org.lzbruby.config.common.page.PagingRequest;
-import org.lzbruby.config.domain.ConfigDict;
+import org.lzbruby.config.dao.model.ConfigDict;
 import org.lzbruby.config.domain.ConfigDictVO;
 import org.lzbruby.config.domain.ConfigDictValidFlagType;
 

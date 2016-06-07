@@ -10,7 +10,7 @@ import org.lzbruby.config.common.utils.DistributeConfigDictUtils;
 import org.lzbruby.config.common.utils.QueryMapperUtils;
 import org.lzbruby.config.core.ConfigDictVersionRegister;
 import org.lzbruby.config.dao.ConfigDictMapper;
-import org.lzbruby.config.domain.ConfigDict;
+import org.lzbruby.config.dao.model.ConfigDict;
 import org.lzbruby.config.domain.ConfigDictVO;
 import org.lzbruby.config.domain.ConfigDictValidFlagType;
 import org.lzbruby.config.service.ConfigDictService;

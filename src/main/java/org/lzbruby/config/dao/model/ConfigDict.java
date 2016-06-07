@@ -1,4 +1,4 @@
-package org.lzbruby.config.domain;
+package org.lzbruby.config.dao.model;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.ibatis.type.Alias;

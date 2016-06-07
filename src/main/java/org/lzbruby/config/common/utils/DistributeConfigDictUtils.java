@@ -1,7 +1,7 @@
 package org.lzbruby.config.common.utils;
 
 import org.apache.commons.lang.StringUtils;
-import org.lzbruby.config.domain.ConfigDict;
+import org.lzbruby.config.dao.model.ConfigDict;
 import org.lzbruby.config.service.result.ConfigDictException;
 import org.lzbruby.config.service.result.ConfigDictResult;
 import org.slf4j.Logger;

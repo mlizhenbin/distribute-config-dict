@@ -5,6 +5,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
     <title>配置管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/public/js/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="/public/css/common.css" rel="stylesheet" >
+    <script src="/public/js/vendor/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="/public/js/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
+    <script src="/public/js/plugin/underscore.js" type="text/javascript"></script>
+    <script src="/public/js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
 </head>
 <body class="wms">
 <div id="dataListDiv">

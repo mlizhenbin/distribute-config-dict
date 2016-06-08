@@ -187,7 +187,7 @@ public class ConfigDictController {
             Paging<ConfigDict> paging = configDictService.findConfigDictByPage(configDictVO, new PagingRequest());
             modelMap.addAttribute("configDict", paging.getResult().get(0));
         }
-        return "/v/config/configDictDetail";
+        return "/view/configDictDetail";
     }
 
     /**

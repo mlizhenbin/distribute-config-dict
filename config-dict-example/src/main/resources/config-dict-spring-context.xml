@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <context:annotation-config/>
+
+    <context:component-scan base-package="org.lzbruby.web"/>
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+        <property name="ignoreResourceNotFound" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:config-dict-web.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
+    <bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
+        <property name="driverClass" value="${wms.db.driverClass}"/>
+        <property name="jdbcUrl" value="${wms.db.url}"/>
+        <property name="username" value="${wms.db.username}"/>
+        <property name="password" value="${wms.db.pwd}"/>
+        <property name="idleConnectionTestPeriod" value="${wms.db.idleConnectionTestPeriod}"/>
+        <property name="idleMaxAge" value="${wms.db.idleMaxAge}"/>
+        <property name="maxConnectionsPerPartition" value="${wms.db.maxConnectionsPerPartition}"/>
+        <property name="minConnectionsPerPartition" value="${wms.db.minConnectionsPerPartition}"/>
+        <property name="partitionCount" value="${wms.db.partitionCount}"/>
+        <property name="acquireIncrement" value="${wms.db.acquireIncrement}"/>
+        <property name="statementsCacheSize" value="${wms.db.statementsCacheSize}"/>
+        <property name="releaseHelperThreads" value="${wms.db.releaseHelperThreads}"/>
+    </bean>
+
+    <bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+        <property name="transactionManager" ref="transactionManager"/>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <import resource="classpath*:config-dict-simple.xml"/>
+
+</beans>

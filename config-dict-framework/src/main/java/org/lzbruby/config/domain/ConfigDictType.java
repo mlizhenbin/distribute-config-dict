@@ -10,6 +10,7 @@ package org.lzbruby.config.domain;
  */
 public enum ConfigDictType {
 
+    TEST("TEST_KEY", "TEST_VALUE")
     ;
 
     /**

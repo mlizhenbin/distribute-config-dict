@@ -14,55 +14,55 @@
     <sql id="ConfigDict_Query_List_Sharing">
         <trim prefix="WHERE" prefixOverrides="AND|OR">
             <if test="id!=null and ''!=id">
-                AND wms_config_dict.id = #{id}
+                AND lr_config_dict.id = #{id}
             </if>
             <if test="filterId!=null and ''!=filterId">
-                AND wms_config_dict.id != #{filterId}
+                AND lr_config_dict.id != #{filterId}
             </if>
             <if test="configType!=null and ''!=configType">
-                AND wms_config_dict.config_type = #{configType}
+                AND lr_config_dict.config_type = #{configType}
             </if>
             <if test="configTypeLike!=null and ''!=configTypeLike">
-                AND wms_config_dict.config_type LIKE concat('%',#{configTypeLike},'%')
+                AND lr_config_dict.config_type LIKE concat('%',#{configTypeLike},'%')
             </if>
             <if test="configTypes!=null and ''!=configTypes">
-                AND wms_config_dict.config_type IN
+                AND lr_config_dict.config_type IN
                 <foreach collection="configTypes" item="configType" open="(" close=")" separator=",">
                     #{configType}
                 </foreach>
             </if>
             <if test="key!=null and ''!=key">
-                AND wms_config_dict.key = #{key}
+                AND lr_config_dict.key = #{key}
             </if>
             <if test="keyLike!=null and ''!=keyLike">
-                AND wms_config_dict.key LIKE concat('%',#{keyLike},'%')
+                AND lr_config_dict.key LIKE concat('%',#{keyLike},'%')
             </if>
             <if test="keys!=null and ''!=keys">
-                AND wms_config_dict.key IN
+                AND lr_config_dict.key IN
                 <foreach collection="keys" item="key" open="(" close=")" separator=",">
                     #{key}
                 </foreach>
             </if>
             <if test="value!=null and ''!=value">
-                AND wms_config_dict.value = #{value}
+                AND lr_config_dict.value = #{value}
             </if>
             <if test="value!=valueLike and ''!=valueLike">
-                AND wms_config_dict.value LIKE concat('%',#{valueLike},'%')
+                AND lr_config_dict.value LIKE concat('%',#{valueLike},'%')
             </if>
             <if test="configDesc!=null and ''!=configDesc">
-                AND wms_config_dict.config_desc = #{configDesc}
+                AND lr_config_dict.config_desc = #{configDesc}
             </if>
             <if test="validFlag!=null and ''!=validFlag">
-                AND wms_config_dict.valid_flag = #{validFlag}
+                AND lr_config_dict.valid_flag = #{validFlag}
             </if>
             <if test="orderId!=null">
-                AND wms_config_dict.order_id = #{orderId}
+                AND lr_config_dict.order_id = #{orderId}
             </if>
         </trim>
     </sql>
 
     <sql id="ConfigDict_By_id">
-        WHERE wms_config_dict.id = #{id}
+        WHERE lr_config_dict.id = #{id}
     </sql>
 
     <sql id="ConfigDict_List_Paramter">
@@ -72,17 +72,17 @@
     </sql>
 
     <sql id="ConfigDict_column">
-        wms_config_dict.id,
-        wms_config_dict.config_type,
-        wms_config_dict.key,
-        wms_config_dict.value,
-        wms_config_dict.config_desc,
-        wms_config_dict.valid_flag,
-        wms_config_dict.order_id
+        lr_config_dict.id,
+        lr_config_dict.config_type,
+        lr_config_dict.key,
+        lr_config_dict.value,
+        lr_config_dict.config_desc,
+        lr_config_dict.valid_flag,
+        lr_config_dict.order_id
     </sql>
 
     <insert id="addConfigDict" parameterType="org.lzbruby.config.dao.model.ConfigDict" keyProperty="id">
-        INSERT INTO wms_config_dict
+        INSERT INTO lr_config_dict
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="configType!=null and ''!=configType">
                 config_type,
@@ -126,25 +126,25 @@
     </insert>
 
     <update id="updateConfigDict" parameterType="org.lzbruby.config.dao.model.ConfigDict">
-        UPDATE wms_config_dict wms_config_dict
+        UPDATE lr_config_dict lr_config_dict
         <trim prefix="SET" suffixOverrides=",">
             <if test="configType!=null and ''!=configType">
-                wms_config_dict.config_type = #{configType},
+                lr_config_dict.config_type = #{configType},
             </if>
             <if test="key!=null and ''!=key">
-                wms_config_dict.key = #{key},
+                lr_config_dict.key = #{key},
             </if>
             <if test="value!=null and ''!=value">
-                wms_config_dict.value = #{value},
+                lr_config_dict.value = #{value},
             </if>
             <if test="configDesc!=null and ''!=configDesc">
-                wms_config_dict.config_desc = #{configDesc},
+                lr_config_dict.config_desc = #{configDesc},
             </if>
             <if test="validFlag!=null and ''!=validFlag">
-                wms_config_dict.valid_flag = #{validFlag},
+                lr_config_dict.valid_flag = #{validFlag},
             </if>
             <if test="orderId!=null">
-                wms_config_dict.order_id = #{orderId},
+                lr_config_dict.order_id = #{orderId},
             </if>
         </trim>
         <include refid="ConfigDict_By_id"/>
@@ -153,21 +153,21 @@
     <select id="findConfigDict" resultMap="configDict_result" parameterType="java.util.HashMap">
         SELECT
         <include refid="ConfigDict_column"/>
-        FROM wms_config_dict wms_config_dict
+        FROM lr_config_dict lr_config_dict
         <include refid="ConfigDict_Query_List_Sharing"/>
     </select>
 
     <select id="findById" resultMap="configDict_result" parameterType="Long">
         SELECT
         <include refid="ConfigDict_column"/>
-        FROM wms_config_dict wms_config_dict
+        FROM lr_config_dict lr_config_dict
         <include refid="ConfigDict_By_id"/>
     </select>
 
     <select id="listConfigDict" resultMap="configDict_result" parameterType="java.util.HashMap">
         SELECT
         <include refid="ConfigDict_column"/>
-        FROM wms_config_dict wms_config_dict
+        FROM lr_config_dict lr_config_dict
         <include refid="ConfigDict_Query_List_Sharing"/>
         <include refid="ConfigDict_List_Paramter"/>
         <if test="begin != null and pageSize != null">
@@ -178,12 +178,12 @@
     <select id="listConfigDictCount" resultType="java.lang.Integer" parameterType="java.util.HashMap">
         SELECT
         COUNT(*)
-        FROM wms_config_dict wms_config_dict
+        FROM lr_config_dict lr_config_dict
         <include refid="ConfigDict_Query_List_Sharing"/>
     </select>
 
     <delete id="deleteConfigDict" parameterType="ConfigDict">
-        DELETE FROM wms_config_dict
+        DELETE FROM lr_config_dict
         <include refid="ConfigDict_By_id"/>
     </delete>
 
